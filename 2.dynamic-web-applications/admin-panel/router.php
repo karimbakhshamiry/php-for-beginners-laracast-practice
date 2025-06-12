@@ -6,6 +6,7 @@ $routes = [
     "/" => "controllers/index.php",
     "/projects" => "controllers/projects.php",
     "/team" => "controllers/team.php",
+    "/db" => "controllers/db.php",
 ];
 
 // dd($url);
