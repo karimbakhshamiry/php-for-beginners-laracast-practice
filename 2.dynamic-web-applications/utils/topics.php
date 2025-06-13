@@ -10,7 +10,7 @@ $topics = [
     ],
     [
         "title" => "Super Globals and Current Page Styling",
-        "url" => "3.super-globals-and-current-page-styling.php"
+        "url" => "3.super-globals-and-current-page-styling.php?welcome=true&name=bakhsh&age=60"
     ],
     [
         "title" => "Make a PHP Router",
