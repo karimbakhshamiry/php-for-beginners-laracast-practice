@@ -3,10 +3,10 @@
 $url = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 $routes = [
-    "/" => "controllers/index.php",
-    "/projects" => "controllers/projects.php",
-    "/team" => "controllers/team.php",
-    "/db" => "controllers/db.php",
+    "/2.dynamic-web-applications/admin-panel/" => "controllers/index.php",
+    "/2.dynamic-web-applications/admin-panel/projects" => "controllers/projects.php",
+    "/2.dynamic-web-applications/admin-panel/team" => "controllers/team.php",
+    "/2.dynamic-web-applications/admin-panel/db" => "controllers/db.php",
 ];
 
 // dd($url);

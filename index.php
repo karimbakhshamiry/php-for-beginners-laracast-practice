@@ -20,12 +20,29 @@
 
     <h2>Topics</h2>
     <ul>
-        <li>
-            <a href="./1.fundamentals/index.php">Section 1: Fundamentals</a>
-        </li>
-        <li>
-            <a href="./2.dynamic-web-applications/index.php">Section 2: Dynamic Web Applications</a>
-        </li>
+
+        <?php
+        $list_of_content = [
+            [
+                "title" => "Section 1: Fundamentals",
+                "link" => "./1.fundamentals/index.php",
+            ],
+            [
+                "title" => "Section 2: Dynamic Web Applications",
+                "link" => "./2.dynamic-web-applications/index.php",
+            ],
+            [
+                "title" => "Section 3: Notes -  Mini Project",
+                "link" => "./3.notes-mini-project/index.php",
+            ]
+        ];
+        ?>
+
+        <?php foreach ($list_of_content as $item): ?>
+            <li>
+                <a href=<?= $item["link"] ?>><?= $item["title"] ?></a>
+            </li>
+        <?php endforeach ?>
     </ul>
 </body>
 
