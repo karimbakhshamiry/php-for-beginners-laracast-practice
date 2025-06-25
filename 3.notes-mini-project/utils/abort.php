@@ -1,8 +1,13 @@
 <?php
 
-function abort($http_status_code = 404)
+function abort($code = 404, $title = null, $subtitle = null)
 {
-    http_response_code($http_status_code);
-    require("controllers/not-found.controller.php");
+    ["title" => $default_title, "subtitle" => $default_subtitle] = Response::$messages[$code];
+
+    // the following variable is used in the view
+    $abort_title = $title ?? $default_title;
+    $abort_subtitle = $subtitle ?? $default_subtitle;
+    http_response_code($code);
+    require("views/$code.view.php");
     die();
 }

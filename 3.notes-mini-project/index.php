@@ -1,6 +1,9 @@
 <?php
 
+$session_user_id = 1;
+
 require('utils/dd.php');
+require('utils/Response.php');
 require('utils/abort.php');
 require('utils/Database.php');
 

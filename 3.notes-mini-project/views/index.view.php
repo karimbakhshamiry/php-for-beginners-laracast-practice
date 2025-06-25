@@ -16,10 +16,13 @@
 
     <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4">Notes</h2>
     <ol class="space-y-3">
-        <?php foreach ($notes as $note): ?>
-            <li class="p-4 bg-gray-100 dark:bg-gray-700 rounded shadow-sm dark:text-white">
-                <div class="line-clamp-1"><?= htmlspecialchars($note['value']) ?></div>
-            </li>
+        <?php foreach ($notes as $index => $note): ?>
+            <a href="note?id=<?= $note["id"] ?>" class="bg-gray-100 dark:bg-gray-700 rounded shadow-sm dark:text-white flex items-center group">
+                <li class="p-4 bg-gray-100 dark:bg-gray-700 rounded shadow-sm dark:text-white flex items-center group-hover:text-blue-500 group-hover:underline">
+                    <span class="font-bold mr-3"><?= $index + 1 ?>.</span>
+                    <div class="line-clamp-1"><?= htmlspecialchars($note['value']) ?></div>
+                </li>
+            </a>
         <?php endforeach ?>
     </ol>
 </div>
