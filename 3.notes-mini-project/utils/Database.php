@@ -3,6 +3,7 @@
 class Database
 {
     private $db_connection;
+    protected $statement;
     function __construct($config)
     {
         [
@@ -21,9 +22,25 @@ class Database
 
     public function query($query, $params = [])
     {
-        $statement = $this->db_connection->prepare($query);
-        $statement->execute($params);
+        $this->statement = $this->db_connection->prepare($query);
+        $this->statement->execute($params);
 
-        return $statement;
+        return $this;
+    }
+
+    public function find()
+    {
+        return $this->statement->fetchAll();
+    }
+
+    public function findOrFail()
+    {
+        $note = $this->statement->fetch();
+
+        if (!$note) {
+            abort(Response::NOT_FOUND, "Note Not Found", "The note you are looking for does not exist.");
+        }
+
+        return $note;
     }
 }
