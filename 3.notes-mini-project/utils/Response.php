@@ -16,7 +16,7 @@ class Response {
         200 => ["title" => "OK", "subtitle" => "The request has succeeded"],
         201 => ["title" => "Created", "subtitle" => "The resource has been created"],
         204 => ["title" => "No Content", "subtitle" => "The server successfully processed the request, but is not returning any content"],
-        400 => ["title" => "Bad Request", "subtitle" => "The server could not understand the request due to invalid syntax"],
+        400 => ["title" => "Bad Request", "subtitle" => "The server could not understand the request due to invalid payload"],
         401 => ["title" => "Unauthorized", "subtitle" => "Authentication is required and has failed or has not yet been provided"],
         403 => ["title" => "Forbidden", "subtitle" => "You do not have permission to access this resource"],
         404 => ["title" => "Page Not Found", "subtitle" => "The page you are looking for does not exist"],

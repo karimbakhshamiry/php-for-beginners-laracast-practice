@@ -32,3 +32,15 @@ function authorize($data, $key, $user_id, $http_status_code = Response::UNAUTHOR
         abort($http_status_code, $title, $note);
     }
 }
+
+function redirect($url, $query_params_array = [])
+{
+    global $note_routes;
+    $query_paramters = http_build_query($query_params_array);
+
+    if (array_key_exists($url, $note_routes)) {
+        header("Location: {$url}?{$query_paramters}");
+    } else {
+        abort(Response::NOT_FOUND, null, "Page note found.");
+    }
+}

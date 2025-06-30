@@ -6,7 +6,7 @@ if (!$id) {
     abort(Response::BAD_REQUEST, null, "Please provide a note ID");
 }
 
-$query = $database->query("SELECT id, value, user_id FROM notes WHERE id = :id", ["id" => $id]);
+$query = $database->query("SELECT id, title, description, done, user_id FROM notes WHERE id = :id", ["id" => $id]);
 $note = $query->findOrFail();
 
 // authorize user for the note

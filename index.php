@@ -33,7 +33,7 @@
             ],
             [
                 "title" => "Section 3: Notes -  Mini Project",
-                "link" => "./3.notes-mini-project/index.php",
+                "link" => "./3.notes-mini-project",
             ]
         ];
         ?>
